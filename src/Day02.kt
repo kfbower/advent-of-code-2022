@@ -1,7 +1,7 @@
 fun main() {
 
     fun part1(input: List<String>): Int {
-
+    println(input)
         return input.size
     }
 
@@ -11,7 +11,7 @@ fun main() {
     }
 
 
-    val input = readInput("Day02")
+    val input = readInput("Day02_test")
     println(part1(input))
     println(part2(input))
 
