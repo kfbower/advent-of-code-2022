@@ -1,7 +1,6 @@
 fun main() {
 
     fun part1(input: List<String>): Int {
-
         var matchScore: Int = 0
         var shapeScore: Int = 0
         var totalScore: Int = 0
@@ -26,6 +25,7 @@ fun main() {
            totalScore = matchScore+shapeScore
 
         return totalScore
+
     }
 
     fun part2(input: List<String>): Int {
