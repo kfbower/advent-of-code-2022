@@ -26,8 +26,6 @@ fun main() {
             }
             val common = list1.intersect(list2.toSet())
             val commonChar = common.first()
-            println(common)
-            println(commonChar)
             val priorityValue = priorityValueMap[commonChar]
             if (priorityValue != null) {
                 priorityList.add(priorityValue)
@@ -38,10 +36,55 @@ fun main() {
     }
 
     fun part2(input: List<String>): Int {
+        val priorityValueMap: MutableMap<Char, Int> = buildPriorityList()
+        val priorityList: MutableList<Int> = mutableListOf()
+        var h = 0
+        var j = 0
+        var k = 0
+        var l = 0
+        while (h<input.size){
+            var first: MutableList<String> = mutableListOf()
+            var second: MutableList<String> = mutableListOf()
+            var third: MutableList<String> = mutableListOf()
+            val list1: MutableList<Char> = mutableListOf()
+            val list2: MutableList<Char> = mutableListOf()
+            val list3: MutableList<Char> = mutableListOf()
+            first.add(input[h])
+            second.add(input[h+1])
+            third.add(input[h+2])
+
+            first.forEachIndexed { i, s ->
+                while (j<s.length){
+                list1.add(s[j])
+                j++}
+            }
+            second.forEachIndexed { i, s ->
+                while (k<s.length){
+                list2.add(s[k])
+                k++}
+            }
+            third.forEachIndexed { i, s ->
+                while (l<s.length){
+                list3.add(s[l])
+                l++}
+            }
+
+            val oneby2 = list1.intersect(list2.toSet())
+            val oneby3 = list1.intersect(list3.toSet())
+            val common = oneby2.intersect(oneby3.toSet())
+            val commonChar = common.first()
+            val priorityValue = priorityValueMap[commonChar]
+            if (priorityValue != null) {
+                priorityList.add(priorityValue)
+            }
+            h += 3
+            j=0
+            k=0
+            l=0
+        }
 
 
-
-        return input.size
+        return priorityList.sum()
 
 
     }
