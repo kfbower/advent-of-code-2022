@@ -20,7 +20,6 @@ fun main() {
                 charset += char2!!
                 charset += char3!!
                 charset += char4!!
-                println(charset.toString())
 
                val distinctcount =  charset.distinct().count()
 
@@ -46,7 +45,43 @@ fun main() {
         return finalIndex
     }
     fun part2(input: List<String>): Int{
-        return input.size
+        var finalIndex = 0
+        var char1: Char?
+        var char2: Char?
+        var char3: Char?
+        var char4: Char?
+        val charset: MutableList<Char> = mutableListOf()
+
+        input.forEachIndexed { i, s ->
+
+            var j=0
+            var k=0
+            while (j< s.length){
+               while (k<14){
+                   charset += s[k+j]
+                   k++
+               }
+
+                val distinctcount =  charset.distinct().count()
+
+                if (distinctcount <14){
+                    j++
+                    k=0
+                    charset.clear()
+                }
+                else {
+                    j+=14
+                    finalIndex = j
+                    return@forEachIndexed
+
+                }
+            }
+            return finalIndex
+
+
+        }
+        return finalIndex
+
     }
 
     val input = readInput("Day06")
