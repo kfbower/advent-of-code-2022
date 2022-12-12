@@ -1,3 +1,7 @@
+package AOC2022.Day01
+
+import readInput
+
 fun main() {
 
     fun makeSummedList(input: List<String>): MutableList<Int> {

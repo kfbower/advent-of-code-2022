@@ -1,3 +1,6 @@
+package AOC2022.Day05
+
+import readInput
 
 fun main() {
     fun part1(input: List<String>) {

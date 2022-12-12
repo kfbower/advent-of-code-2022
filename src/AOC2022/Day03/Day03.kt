@@ -1,3 +1,7 @@
+package AOC2022.Day03
+
+import readInput
+
 fun main() {
 
 
