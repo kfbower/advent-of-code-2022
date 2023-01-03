@@ -1,6 +1,6 @@
 package AOC2022.Day02
 
-import readInput
+import AOC2022.readInput
 
 fun main() {
 
